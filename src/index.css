@@ -1,19 +1,35 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
-  margin: 0; 
+* { 
+  margin: 0;
   padding: 0; 
-  box-sizing: border-box;
+  box-sizing: border-box; 
   font-family: "Montserrat", sans-serif; 
 }
 
-body{ 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  min-height: 100vh; /*puts in middle of page */
-  background: #2e5339; /* entire background color */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f9f9f9; /* For light sections */
+  color: #2e5339; /* Dark green for text */
+  position: relative; /* For pseudo-element */
 }
+
+#root {
+  --dark-green: #2e5339;
+  --light-green: #d9e6d2;
+  --beige: #f4f1ea;
+  --gray: #606060;
+}
+
+body {
+  background-color: var(--beige);
+  color: var(--dark-green);
+}
+
 
 
 #root{ 
@@ -200,4 +216,283 @@ body::before {
 #root {
   position: relative;
   z-index: 1; /* Ensure it appears above the blurred background */
+}
+
+
+
+
+/* Main CSS page */
+
+* { 
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: "Montserrat", sans-serif; 
+}
+
+.nav-container { 
+  width: 100vw; 
+  min-height: 100vh;
+  background: #2e5339 ;
+}
+
+
+
+
+
+/* Global Styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  color: #2e5339; /* Dark green for text */
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: #2e5339;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  color: #606060; /* Muted text color */
+  line-height: 1.6;
+}
+
+/* Hero Section */
+/* src/components/Hero.css */
+.hero {
+    background: #2e5339;/* Deep green background */
+    color: #f4f1ea; /* Light beige text color */
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #f4f1ea;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: #d9e6d2; /* Softer green for the paragraph */
+}
+
+.cta-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: #d9e6d2; /* Light green for the button */
+    color: #2e5339; /* Dark green for button text */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #c3d6b6; /* Slightly darker green on hover */
+}
+
+.hero::before{ 
+  background-image: url('/book2.jpg'); 
+  background-size: cover; 
+  filter: blur(8px); /* Apply blur to the background only */
+  z-index: -1;
+}
+
+/* Featured Books Section */
+.featured-books {
+  padding: 80px 20px;
+  background-color: #f4f1ea; /* Light beige background */
+  text-align: center;
+}
+
+.featured-books h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.book-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 180px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.book-card h3 {
+  font-size: 1.125rem;
+  color: #2e5339;
+  margin-bottom: 0.5rem;
+}
+
+.book-card p {
+  font-size: 0.9rem;
+  color: #606060;
+}
+
+/* Browse Books Section */
+.browse-books {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.browse-books h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.browse-books p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.browse-books .cta-button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #d9e6d2;
+  color: #2e5339;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.browse-books .cta-button:hover {
+  background-color: #c3d6b6;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial {
+  background: #ffffff;
+  padding: 20px;
+  margin: 10px auto;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial p {
+  font-style: italic;
+  color: #2e5339;
+}
+
+/* Footer */
+footer {
+  background: #2e5339;
+  color: #f4f1ea;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+footer .social-links a {
+  color: #f4f1ea;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+  color: #d9e6d2;
+}
+
+/* src/components/BookCard.css */
+.book-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 220px;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.book-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.book-details {
+  padding: 16px;
+}
+
+.book-title {
+  font-size: 1.125rem;
+  color: #2e5339;
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+.book-author {
+  font-size: 0.9rem;
+  color: #606060;
+  margin-bottom: 1rem;
+}
+
+.book-description {
+  font-size: 0.85rem;
+  color: #808080;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.trade-button {
+  background-color: #d9e6d2;
+  color: #2e5339;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.trade-button:hover {
+  background-color: #c3d6b6;
 }
